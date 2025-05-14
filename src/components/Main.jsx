@@ -1,14 +1,4 @@
-// import React from 'react';
 
-// const Main = () => {
-//     return ( 
-//         <>
-//             <h1>Main</h1>
-//         </>
-//      );
-// }
- 
-// export default Main;
 import { useEffect, useState } from 'react';
 import { database, ref, onValue } from '../firebase';
 
@@ -41,7 +31,7 @@ function Main() {
   if (loading) return <div>Загрузка...</div>;
 
   return (
-    <div>
+    <div className='main-page'>
       {items.length === 0 ? (
         <div>Нет данных</div>
       ) : (
@@ -50,7 +40,12 @@ function Main() {
             <h3 className='client-name'>{item.name}</h3>
             <p className='claent-description'>{item.description}</p>
             <p className='master'>{item.title}</p>
-            <img src={item.image} alt="" />
+           <img 
+              src={`data:${item.imageType};base64,${item.imageBase64}`}
+              alt={item.title}
+              className="item-image"
+            />
+            <p>id: {item.id}</p>
           </div>
         ))
       )}

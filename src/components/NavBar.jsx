@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
@@ -14,7 +13,7 @@ const NavBar = () => {
                         : ''    
                 }
             >
-                Main
+                Главная
             </Link>
              <Link
                 to='/addform'
@@ -24,7 +23,7 @@ const NavBar = () => {
                         : ''    
                 }
             >
-                Add
+                Добавить
             </Link>
         </nav>
      );
