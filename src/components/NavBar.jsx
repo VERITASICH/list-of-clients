@@ -6,9 +6,9 @@ const NavBar = () => {
     return ( 
         <nav className='nav'>
             <Link
-                to='/'
+                to='/list-of-clients/'
                 className={
-                    location.pathname === '/'
+                    location.pathname === '/list-of-clients/'
                         ? 'active'
                         : ''    
                 }
