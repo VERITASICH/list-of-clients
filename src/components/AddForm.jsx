@@ -72,6 +72,18 @@ function AddForm() {
   });
   const [uploading, setUploading] = useState(false);
   const [preview, setPreview] = useState('');
+  const masters = [
+    'Россошь',
+    'Леня',
+    'Бобер',
+    'Гарик',
+    'Андрей',
+    'Рома',
+    'Илья',
+    'Ришад',
+    'Данил',
+    'Никита',
+  ]
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -160,13 +172,20 @@ function AddForm() {
           placeholder="Имя"
           required
         />
-        <input
-          name="title"
-          value={formData.title}
-          onChange={handleChange}
-          placeholder="Мастер"
-          required
-        />
+        <select
+        name="title"
+        value={formData.title}
+        onChange={handleChange}
+        required
+        className="form-select"
+      >
+        <option value="" disabled>Выберите мастера</option>
+        {masters.map((master, index) => (
+          <option key={index} value={master}>
+            {master}
+          </option>
+        ))}
+      </select>
         <textarea
           name="description"
           value={formData.description}
